@@ -443,3 +443,12 @@ INSTALLED_APPS = [
         new file:   tenant/tests.py
         new file:   tenant/views.py
 ```
+
+-> 10. Add DATABASE_ROUTERS (repeating step no. 7 because of mistaken)
+
+```py
+# DATABASE ROUTER
+DATABASE_ROUTERS = (
+    'django_tenants.routers.TenantSyncRouter',
+)
+```
