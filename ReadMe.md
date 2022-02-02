@@ -641,3 +641,40 @@ Go to: http://blog1.localhost:8000/
 Refresh the browser
 DONE :)
 ```
+
+-> 17. Create a new db schema 'blog2'
+```
+STEPS:
+
+1. Parent creates a new tenant, named 'blog2'
+2. Activate
+3. Create: create_tenant_superuser
+4. Login
+5. Create posts
+6. Run the server, refresh browser
+
+NOTE: Step 3 --> see poin 16 above
+
+# Create superuser
+(multitenant) λ python manage.py create_tenant_superuser
+Enter Tenant Schema ('?' to list schemas): ?
+blog1 - blog1.localhost
+blog2 - blog2.localhost
+public - localhost
+Enter Tenant Schema ('?' to list schemas): blog2
+Username (leave blank to use 'hp'): adminblog2
+Email address: adminblog2@email.com
+Password:
+Password (again):
+Error: Your passwords didn't match.
+Password:
+Password (again):
+The password is too similar to the username.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+
+# New/modified files
+        modified:   ReadMe.md
+        new file:   static/images/article/darling.PNG
+        new file:   static/images/profile/postgresql-card.png
+```
