@@ -598,3 +598,16 @@ class TenantMiddleware(TenantMainMiddleware):
     # custom tenant middleware
     'core.middleware.TenantMiddleware',
 ```
+
+-> 15. Created blog1 schema from tenant's admin panel
+
+```py
+# Check in the db you will see db schema like bellow:
+multitenant_django_blogx_2022
+> blog1
+> public
+# NOTE:
+1. I created a new post, but it was display on the tenant's page.
+2. To make the owner of blog1 to publish posts, he must first
+   create superuser.
+```
