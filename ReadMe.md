@@ -395,3 +395,12 @@ Superuser created successfully.
         new file:   static/images/profile/darling.PNG
         new file:   static/images/profile/ing.PNG
 ```
+
+-> 7. Add DATABASE_ROUTERS
+
+```py
+# DATABASE ROUTER
+DATABASE_ROUTERS = (
+    'django_tenants.routers.TenantSyncRouter',
+)
+```
