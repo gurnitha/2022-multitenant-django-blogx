@@ -30,7 +30,32 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+# --------Configure TENANT_MODEL and TENANT_DOMAIN_MODEL-----
+
+# INSTALLED_APPS = [
+#     'django.contrib.admin',
+#     'django.contrib.auth',
+#     'django.contrib.contenttypes',
+#     'django.contrib.sessions',
+#     'django.contrib.messages',
+#     'django.contrib.staticfiles',
+
+#     'blog',
+#     'tenant',
+
+#     'ckeditor',
+#     'ckeditor_uploader',
+# ]
+
+
+# Application definition
+"""
+    These app's data are stored on the public schema
+"""
+SHARED_APPS = [
+    'django_tenants',  # mandatory
+    'tenant',  # you must list the app where your tenant model resides in
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,12 +63,33 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'blog',
-    'tenant',
-
     'ckeditor',
     'ckeditor_uploader',
+
+    # we place blog here since we want 
+    # public schema to have the same structure like tenant apps
+    'blog',
 ]
+"""
+    These app's data are stored on their specific schemas
+"""
+TENANT_APPS = [
+    # The following Django contrib apps must be in TENANT_APPS
+    'django.contrib.contenttypes',
+    'django.contrib.auth',
+    'django.contrib.admin',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+
+    # tenant-specific apps
+    'blog',
+]
+
+INSTALLED_APPS = list(SHARED_APPS) + [
+    app for app in TENANT_APPS if app not in SHARED_APPS
+]
+
+# --------Configure TENANT_MODEL and TENANT_DOMAIN_MODEL-----
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -89,7 +135,8 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django_tenants.postgresql_backend',
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'multitenant_django_blogx_2022',
         'USERNAME': 'postgres',
         'PASSWORD': 'ing',
@@ -168,3 +215,10 @@ CKEDITOR_CONFIGS = {
         'width': '100%',
     },
 }
+
+
+# NEW
+
+TENANT_MODEL = "tenant.Tenant"
+
+TENANT_DOMAIN_MODEL = "tenant.Domain"
