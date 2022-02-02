@@ -331,3 +331,14 @@ requirements.txt
 static/
 staticfiles/
 ```
+
+-> 2. Install django tenants, psycopg2 and update requirements.txt file
+
+```
+pip install django-tenants
+pip install psycopg2
+pip freeze > requirements.txt
+
+modified:   ReadMe.md
+modified:   requirements.txt
+```
