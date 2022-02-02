@@ -353,3 +353,17 @@ modified:   requirements.txt
 ```bash
 modified:   ReadMe.md
 ```
+
+-> 4. Create Postgres database and connect it with the blogx
+```py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'django_dukcapildesabojongbaru_new',
+        'USERNAME': 'postgres',
+        'PASSWORD': 'xxx',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
+}
+```
