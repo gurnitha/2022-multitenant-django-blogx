@@ -611,3 +611,33 @@ multitenant_django_blogx_2022
 2. To make the owner of blog1 to publish posts, he must first
    create superuser.
 ```
+
+-> 16. CreatE superuser for blog1, login and create posts
+
+```py
+# Create superuser
+(multitenant) λ python manage.py create_tenant_superuser
+Enter Tenant Schema ('?' to list schemas): ?
+blog1 - blog1.localhost
+public - localhost
+Enter Tenant Schema ('?' to list schemas): blog1
+Username (leave blank to use 'hp'): adminblog1
+Email address: adminblog1@email.com
+Password:(adminblog1)
+Password (again):(adminblog1)
+The password is too similar to the username.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+
+# Login as admin of blog1
+Go to: http://blog1.localhost:8000/admin
+Username and password: adminblog1
+
+# Create post
+Create some post 
+
+# Testing
+Go to: http://blog1.localhost:8000/
+Refresh the browser
+DONE :)
+```
