@@ -413,3 +413,33 @@ MIDDLEWARE = [
     # django tenant middleware
     'django_tenants.middleware.main.TenantMainMiddleware',
 ```
+
+-> 9. Create tenant app and add tenant app to settings.py
+
+```py
+# Create tenant app
+(multitenant) λ python manage.py startapp tenant
+
+# Add tentant app to settings.py
+INSTALLED_APPS = [
+    ...
+
+    'blog',
+    'tenant',
+
+    'ckeditor',
+    'ckeditor_uploader',
+]
+
+# new files
+        modified:   .gitignore
+        modified:   core/__pycache__/settings.cpython-39.pyc
+        modified:   core/settings.py
+        new file:   tenant/__init__.py
+        new file:   tenant/admin.py
+        new file:   tenant/apps.py
+        new file:   tenant/migrations/__init__.py
+        new file:   tenant/models.py
+        new file:   tenant/tests.py
+        new file:   tenant/views.py
+```
