@@ -319,15 +319,15 @@ def article(request, article):
 
 -> 1. Clonning Django-Blogx for Multi Tenant Exercise
 ```bash
-        .gitignore
-        .vscode/
-        LICENSE
-        ReadMe.md
-        blog/
-        core/
-        db.sqlite3
-        manage.py
-        requirements.txt
-        static/
-        staticfiles/
+.gitignore
+.vscode/
+LICENSE
+ReadMe.md
+blog/
+core/
+db.sqlite3
+manage.py
+requirements.txt
+static/
+staticfiles/
 ```
