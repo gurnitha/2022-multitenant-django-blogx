@@ -525,3 +525,46 @@ python manage.py migrate_schemas
         new file:   tenant/migrations/0001_initial.py
         modified:   tenant/models.py
 ```
+
+-> 12. Setup Initial User, Tenant and Admin
+
+```py
+# create first user
+python manage.py createsuperuser
+
+# Create the Public Schema
+(multitenant) λ python manage.py create_tenant
+schema name: public
+user: 1
+blog name: Main
+blog image:
+featured:
+description:
+is active: True
+domain: localhost
+is primary (leave blank to use 'True'):
+
+# Create the Administrator
+(multitenant) λ python manage.py create_tenant_superuser
+Enter Tenant Schema ('?' to list schemas): ?
+public - localhost
+Enter Tenant Schema ('?' to list schemas): public
+Username (leave blank to use 'hp'): admin1
+Email address: admin1@email.com
+Password:
+Password (again):
+The password is too similar to the username.
+This password is too short. It must contain at least 8 characters.
+This password is too common.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+
+# Run server
+python manage.py runserver
+
+# Logout and login as admin1
+Go to: http://127.0.0.1:8000/admin/ and logout then login as admin1
+
+# New/changed files
+        modified:   ReadMe.md
+```
