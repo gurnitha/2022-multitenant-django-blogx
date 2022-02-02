@@ -386,3 +386,12 @@ This password is too common.
 Bypass password validation and create user anyway? [y/N]: y
 Superuser created successfully.
 ```
+
+-> 6. Create new users and add some posts 
+```html
+        new file:   static/images/article/gladiator.jpg
+        new file:   static/images/article/limitless.JPG
+        new file:   static/images/article/luther.JPG
+        new file:   static/images/profile/darling.PNG
+        new file:   static/images/profile/ing.PNG
+```
