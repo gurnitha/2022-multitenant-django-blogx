@@ -92,6 +92,12 @@ INSTALLED_APPS = list(SHARED_APPS) + [
 # --------Configure TENANT_MODEL and TENANT_DOMAIN_MODEL-----
 
 MIDDLEWARE = [
+    # add this at the top
+    # django tenant middleware
+    'django_tenants.middleware.main.TenantMainMiddleware',
+    # custom tenant middleware
+    'core.middleware.TenantMiddleware',
+    
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

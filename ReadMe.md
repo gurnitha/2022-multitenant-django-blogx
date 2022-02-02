@@ -588,3 +588,13 @@ class TenantMiddleware(TenantMainMiddleware):
         return tenant
 
 ```
+
+-> 14. Add the middleware and re-peat poin 8 (mistaken)
+
+```py
+    # add this at the top
+    # django tenant middleware
+    'django_tenants.middleware.main.TenantMainMiddleware',
+    # custom tenant middleware
+    'core.middleware.TenantMiddleware',
+```
