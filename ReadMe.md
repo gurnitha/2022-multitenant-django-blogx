@@ -1,4 +1,10 @@
-## Build A Blog With Django
+## Turning Ready Made Blogx Into Django Tenant Blogx
+
+This is my first exercise about DJANGO MULTITENANT based on the tutorial and django-blogx made by Academy Omen on Youtube
+
+My Github repository:
+https://github.com/gurnitha/2022-multitenant-django-blogx
+
 
 #### [View the Tutorial Video](https://youtu.be/J7UOjUshjyY)
 
@@ -341,4 +347,9 @@ pip freeze > requirements.txt
 
 modified:   ReadMe.md
 modified:   requirements.txt
+```
+
+-> 3. Modify Readme.md file
+```bash
+modified:   ReadMe.md
 ```
