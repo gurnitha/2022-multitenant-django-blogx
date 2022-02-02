@@ -404,3 +404,12 @@ DATABASE_ROUTERS = (
     'django_tenants.routers.TenantSyncRouter',
 )
 ```
+
+-> 8. Setup Middleware
+
+```py
+MIDDLEWARE = [
+    # add this at the top
+    # django tenant middleware
+    'django_tenants.middleware.main.TenantMainMiddleware',
+```
